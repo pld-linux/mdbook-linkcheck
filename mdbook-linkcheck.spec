@@ -65,9 +65,6 @@ export OPENSSL_NO_VENDOR=1
 	--path . \
 	--root $RPM_BUILD_ROOT%{_prefix}
 
-%{__rm} $RPM_BUILD_ROOT%{_prefix}/.crates.toml
-%{__rm} $RPM_BUILD_ROOT%{_prefix}/.crates2.json
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
