@@ -2,7 +2,7 @@ Summary:	Utility to create modern online books from Markdown files
 Summary(pl.UTF-8):	Narzędzie do tworzenia nowoczesnych książek online z plików Markdown
 Name:		mdbook-linkcheck
 Version:	0.7.7
-Release:	1
+Release:	2
 License:	MPL v2.0
 Group:		Applications/Text
 #Source0Download: https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases
