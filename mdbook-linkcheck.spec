@@ -2,7 +2,7 @@ Summary:	Utility to create modern online books from Markdown files
 Summary(pl.UTF-8):	Narzędzie do tworzenia nowoczesnych książek online z plików Markdown
 Name:		mdbook-linkcheck
 Version:	0.7.7
-Release:	2
+Release:	3
 License:	MPL v2.0
 Group:		Applications/Text
 #Source0Download: https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases
@@ -13,7 +13,8 @@ Source0:	https://github.com/Michael-F-Bryan/mdbook-linkcheck/archive/v%{version}
 # cd ..
 # tar cJf mdbook-linkcheck-vendor-%{version}.tar.xz mdbook-linkcheck-%{version}/{vendor,Cargo.lock}
 Source1:	%{name}-vendor-%{version}.tar.xz
-# Source1-md5:	b932d6b28dc2fb0e5938393c4ccebca0
+# Source1-md5:	6b0a3b5ae4ccdb38c9058f38e612c750
+Patch0:		mdbook-0.5.patch
 URL:		https://github.com/Michael-F-Bryan/mdbook-linkcheck
 BuildRequires:	cargo
 BuildRequires:	openssl-devel >= 1.1.1
@@ -23,8 +24,7 @@ BuildRequires:	rust
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 %{?rust_req}
-Requires:	mdbook >= 0.4.0
-Requires:	mdbook < 0.5
+Requires:	mdbook >= 0.5.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -36,6 +36,7 @@ Markdown.
 
 %prep
 %setup -q -b1
+%patch -P0 -p1
 
 # use our offline registry
 export CARGO_HOME="$(pwd)/.cargo"
