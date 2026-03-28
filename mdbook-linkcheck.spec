@@ -18,10 +18,11 @@ URL:		https://github.com/Michael-F-Bryan/mdbook-linkcheck
 BuildRequires:	cargo
 BuildRequires:	openssl-devel >= 1.1.1
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 2.004
+BuildRequires:	rpmbuild(macros) >= 2.050
 BuildRequires:	rust
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+%{?rust_req}
 Requires:	mdbook >= 0.4.0
 Requires:	mdbook < 0.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
